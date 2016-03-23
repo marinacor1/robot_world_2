@@ -1,7 +1,12 @@
-<a href="/robots">Robot Index</a>
-
-<h1><%= @robot.name %></h1>
-
-<p><%= @robot.department %></p>
+<a href="/robots">Todos los Robots</a>
+<div class="create">
+  <h1><%= @robot.name %></h1>
+  <p><%= @robot.city %></p>
+  <p><%= @robot.state %></p>
+  <p><%= @robot.avatar %></p>
+  <p><%= @robot.birthdate %></p>
+  <p><%= @robot.date_hired %></p>
+  <p><%= @robot.department %></p>
+</div>
 
 <!-- will display specific robot and link back to robot index -->

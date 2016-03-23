@@ -4,7 +4,7 @@ robots:
   name: Larry
   city: Lubbock
   state: Texas
-  avatar: '32'
+  avatar: '33'
   birthdate: 02/13/1994
   date_hired: 01/01/2012
   department: Turismo
@@ -16,4 +16,12 @@ robots:
   birthdate: 05/06/1971
   date_hired: 01/02/2003
   department: Fufu
-total: 4
+- id: 5
+  name: Joaquin
+  city: Jacksonville
+  state: Mississippi
+  avatar: '97'
+  birthdate: 12/30/1945
+  date_hired: 01/01/2003
+  department: Bobo
+total: 5
