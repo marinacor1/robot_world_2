@@ -1,3 +1,19 @@
 ---
-robots: []
-total: 1
+robots:
+- id: 3
+  name: Larry
+  city: Lubbock
+  state: Texas
+  avatar: '32'
+  birthdate: 02/13/1994
+  date_hired: 01/01/2012
+  department: Turismo
+- id: 4
+  name: Xuxa
+  city: Atlanta
+  state: Georgia
+  avatar: '234'
+  birthdate: 05/06/1971
+  date_hired: 01/02/2003
+  department: Fufu
+total: 4

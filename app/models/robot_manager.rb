@@ -21,6 +21,11 @@ class RobotManager
     database.transaction do
       target = database['robots'].find { |data| data["id"] == id}
       target["name"] = robot[:name]
+      target["city"] = robot[:city]
+      target["state"] = robot[:state]
+      target["avatar"] = robot[:avatar]
+      target["birthdate"] = robot[:birthdate]
+      target["date_hired"] = robot[:date_hired]
       target["department"] = robot[:department]
     end
   end
@@ -32,7 +37,7 @@ class RobotManager
   end
 
   def raw_robots
-    database.transaction do 
+    database.transaction do
       database['robots'] || []
     end
   end
