@@ -13,6 +13,11 @@ class RobotManagerApp < Sinatra::Base
     erb :index
   end
 
+  get '/robots/dashboard' do
+    @robots = robot_manager.all
+    erb :dashboard_page
+  end
+
   get '/robots/new' do
     erb :new
   end
@@ -45,6 +50,6 @@ class RobotManagerApp < Sinatra::Base
 
   def robot_manager
     database = YAML::Store.new('db/robot_manager')
-    @robot_manager ||= RobotManager.new(database) 
+    @robot_manager ||= RobotManager.new(database)
   end
 end

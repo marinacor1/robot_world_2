@@ -1,13 +1,16 @@
 <h1>Todos los Robots</h1>
-
-<% @robots.each do |robot| %>
-  <i class='glyphicon glyphicon-th'></i>
-  <h3><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-  <a href="/robots/<%= robot.id %>/edit">Editar</a>
-
-  <form action="/robots/<%= robot.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Eliminar">
-  </form>
+      <% @robots.each do |robot| %>
+<table class ="table table-condensed table-hover
+">
+    <td><i class='glyphicon glyphicon-th'></i></td>
+    <td><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
+    <td><a href="/robots/<%= robot.id %>/edit">Editar</a></td>
+    <td>
+      <form action="/robots/<%= robot.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Eliminar">
+      </form>
+    </td>
+</table>
 <% end %>
  <!-- adds link to edit . underscore method means to override -->

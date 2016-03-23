@@ -19,4 +19,19 @@ class Robot
     @date_hired = data["date_hired"]
     @department = data["department"]
   end
+
+  def average_robot_age
+end
+
+  def robots_hired_per_year
+  end
+
+  def deparment_number
+  end
+
+  def city_number
+  end
+
+  def state
+  end
 end

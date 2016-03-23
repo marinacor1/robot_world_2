@@ -8,11 +8,19 @@ body{
 }
 
 .create {
-  color:orange;
+  color:orange !important;
 }
 
 .titles{
   color:purple;
   font-size: 250%;
-  text-align: center;
+  text-align: center !important;
+}
+
+.dashboard_page {
+  background: url(realistic-imac.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
