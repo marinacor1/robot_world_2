@@ -16,4 +16,12 @@ robots:
   birthdate: 05/06/1971
   date_hired: 01/02/2003
   department: Fufu
-total: 5
+- id: 6
+  name: Fernando
+  city: Denver
+  state: Colorada
+  avatar: '384'
+  birthdate: 04/18/1983
+  date_hired: 09/21/1994
+  department: Milkyway
+total: 6

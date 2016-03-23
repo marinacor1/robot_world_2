@@ -8,10 +8,11 @@ body{
 }
 
 .create {
-  color:white;
+  color:orange;
 }
 
 .titles{
   color:purple;
   font-size: 250%;
+  text-align: center;
 }
