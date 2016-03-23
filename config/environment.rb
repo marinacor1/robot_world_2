@@ -10,7 +10,6 @@ Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| requir
 # require the model(s)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
 
-# configure RobotManagerApp settings here is possible
 class RobotManagerApp < Sinatra::Base
   set :method_override, true
   set :server, 'webrick'
