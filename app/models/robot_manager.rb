@@ -1,15 +1,15 @@
-require 'yaml/store' #allows us to store data in specific file
+require 'yaml/store'
 require_relative 'robot'
 
 class RobotManager
   attr_reader :database
 
   def initialize(database)
-    @database = database #gives instance of YAML::Store in db/robot_manager file
+    @database = database
   end
 
-  def create(robot) #transaction method is from YAML file
-    database.transaction do #creating a robot if it does not exist than create what's on teh right else do whats on the left
+  def create(robot)
+    database.transaction do
       database['robots'] ||= []
       database['total'] ||= 0
       database['total'] += 1
@@ -20,19 +20,19 @@ class RobotManager
   def update(id, robot)
     database.transaction do
       target = database['robots'].find { |data| data["id"] == id}
-      target["name"] = robot[:name] #you need string to access YAML, symbol is allowed for params though
+      target["name"] = robot[:name]
       target["department"] = robot[:department]
     end
   end
 
   def delete(id)
     database.transaction do
-      database['robots'].delete_if { |robot| robot["id"] == id} #deleting if have the same id
+      database['robots'].delete_if { |robot| robot["id"] == id}
     end
   end
 
-  def raw_robots #goes into YAML file and retrieves everything under database['robots']
-    database.transaction do #database is the YAML file
+  def raw_robots
+    database.transaction do 
       database['robots'] || []
     end
   end
