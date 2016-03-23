@@ -1,38 +1,38 @@
 require 'models/robot_manager'
 
 class RobotManagerApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__) #sets root of project
-  set :method_override, true  # this allows us to use _method in the form
+  set :root, File.expand_path("..", __dir__)
+  set :method_override, true
 
-  get '/' do #this is the controller's single route
-    erb :dashboard #will look for an erb file called dashboard
+  get '/' do
+    erb :dashboard
   end
 
-  get '/robots' do #adding a route #READ for all the robots
+  get '/robots' do
     @robots = robot_manager.all
     erb :index
   end
 
-  get '/robots/new' do #CREATE ?? It could be read because it's a get
+  get '/robots/new' do
     erb :new
   end
 
-  post '/robots' do #using post bc its data to be processed (Get is for data from a specific source) #Create
+  post '/robots' do
     robot_manager.create(params[:robot])
-    redirect '/robots' #once robot is created
+    redirect '/robots'
   end
 
-  get '/robots/:id' do |id| #will change address to match robot #update
+  get '/robots/:id' do |id|
     @robot = robot_manager.find(id.to_i)
     erb :show
   end
 
-  get '/robots/:id/edit' do |id| #update
+  get '/robots/:id/edit' do |id|
     @robot = robot_manager.find(id.to_i)
     erb :edit
   end
 
-  put '/robots/:id' do |id| #update
+  put '/robots/:id' do |id|
     robot_manager.update(id.to_i, params[:robot])
     redirect "/robots/#{id}"
   end
@@ -44,7 +44,7 @@ class RobotManagerApp < Sinatra::Base
   end
 
   def robot_manager
-    database = YAML::Store.new('db/robot_manager') #YAML is the database. File is white space sensitive.
-    @robot_manager ||= RobotManager.new(database) #robots are created here
+    database = YAML::Store.new('db/robot_manager')
+    @robot_manager ||= RobotManager.new(database) 
   end
 end
