@@ -248,5 +248,13 @@ robots:
   birthdate: 08-30-1956
   date_hired: 09-07-12
   department: warping
+- id: 1
+  name: Sobuku
+  city: Dallas
+  state: Texas
+  avatar: '45'
+  birthdate: 08-30-1956
+  date_hired: 09-07-12
+  department: warping
 total: 0
 tasks: []
