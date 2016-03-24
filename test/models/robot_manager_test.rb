@@ -20,13 +20,11 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_returns__empty_array_for_initial_all
-    skip
     all = robot_manager.all
     assert_equal [], all
   end
 
   def test_it_returns__all_info_for_all
-    skip
     robot_manager.create({:title => 'eat', :description => 'i love food'})
     robot_manager.create({:title => 'swim', :description => '30 minute laps'})
     robot_manager.create({:title => 'yoga', :description => 'yoga sculpt at 6pm'})

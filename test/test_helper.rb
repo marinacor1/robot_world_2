@@ -25,9 +25,9 @@ module TestHelpers
     @robot_manager ||= RobotManager.new(database)
   end
 
-  def create_robots(num = 2)
-    num.times do |i|
-      robot_manager.create({:title => "robot title #{i + 1}", :description => "robot description #{i + 2}" })
-    end
-  end
+  # def create_robots(num = 2)
+  #   num.times do |i|
+  #     robot_manager.create({:title => "robot title #{i + 1}", :description => "robot description #{i + 2}" })
+  #   end
+  # end
 end
