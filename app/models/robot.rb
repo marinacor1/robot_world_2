@@ -10,18 +10,18 @@ class Robot
 
   def initialize(data)
     puts "this is the data: #{data}!!"
-    @id         = data["id"]
-    @name       = data["name"]
-    @city       = data["city"]
-    @state      = data["state"]
-    @avatar     = data["avatar"]
-    @birthdate  = data["birthdate"]
-    @date_hired = data["date_hired"]
-    @department = data["department"]
+    @id         = data[:id]
+    @name       = data[:name]
+    @city       = data[:city]
+    @state      = data[:state]
+    @avatar     = data[:avatar]
+    @birthdate  = data[:birthdate]
+    @date_hired = data[:date_hired]
+    @department = data[:department]
   end
 
   def average_robot_age
-end
+  end
 
   def robots_hired_per_year
   end
@@ -32,6 +32,4 @@ end
   def city_number
   end
 
-  def state
-  end
 end

@@ -8,12 +8,8 @@ class RobotManager
   end
 
   def create(robot)
-    database.transaction do
-      database['robots'] ||= []
-      database['total'] ||= 0
-      database['total'] += 1
-      database['robots'] << {"id" => database['total'], "name" => robot[:name], "city" => robot[:city], "state" => robot[:state], "avatar" => robot[:avatar], "birthdate" => robot[:birthdate], "date_hired" => robot[:date_hired], "department" => robot[:department]}
-    end
+    robots = database.from(:robots)
+    robots.insert(robot)
   end
 
   def update(id, robot)
@@ -35,14 +31,8 @@ class RobotManager
     end
   end
 
-  def raw_robots
-    database.transaction do
-      database['robots'] || []
-    end
-  end
-
   def all
-    raw_robots.map do |data|
+    database.from(:robots).map do |data|
       Robot.new(data)
     end
   end
@@ -54,13 +44,11 @@ class RobotManager
   end
 
   def find(id)
+    # dataset.where(:id => id)
     Robot.new(raw_robot(id))
   end
 
   def delete_all #access database so use database.transaction
-    database.transaction do
-      database['robots'] = []
-      database['total'] = 0
-    end
+    database.from(:robots).delete
   end
 end

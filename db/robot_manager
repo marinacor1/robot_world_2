@@ -11,17 +11,17 @@ robots:
 - id: 6
   name: Fernando
   city: Denver
-  state: Colorada
+  state: 'Colorado '
   avatar: '384'
   birthdate: 04/18/1983
   date_hired: 09/21/1994
   department: Milkyway
-- id: 7
-  name: wljeew
-  city: dsljsd
-  state: ddd
-  avatar: sdflsdj
-  birthdate: dsfdsl
-  date_hired: sf
-  department: sfd
-total: 7
+- id: 8
+  name: sdlkj
+  city: lkj
+  state: ljl
+  avatar: lkjlk
+  birthdate: lkjlk
+  date_hired: lkj
+  department: lj
+total: 8

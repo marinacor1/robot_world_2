@@ -21,13 +21,19 @@ module TestHelpers
   end
 
   def robot_manager #will overwrite what was database before. Manage data.
-    database = YAML::Store.new('db/robot_manager_test')
+    database = Sequel.sqlite('db/robot_manager_test.sqlite')
     @robot_manager ||= RobotManager.new(database)
   end
 
-  # def create_robots(num = 2)
-  #   num.times do |i|
-  #     robot_manager.create({:title => "robot title #{i + 1}", :description => "robot description #{i + 2}" })
-  #   end
-  # end
+  def create_robots(num = 2)
+    num.times do |i|
+    robot_manager.create_robot({:name       => "Sobuku",
+                          :city      => "City #{i + 1}",
+                          :state     => "State #{i + 1}",
+                          :avatar     => "45 #{i + 1}",
+                          :birthdate  => "08-30-195#{i + 1}",
+                          :date_hired => "09-07-190#{i + 1}",
+                          :department => "warping#{i + 1}"})
+    end
+  end
 end

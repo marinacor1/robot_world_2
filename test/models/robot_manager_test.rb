@@ -3,20 +3,18 @@ require_relative '../test_helper'
 class RobotManagerTest < Minitest::Test
   include TestHelpers
   def test_robot_manager_creates_a_robot
-    robot_manager.create({ :id       =>1,
-                          :name       => "Sobuku",
+    robot_manager.create({ :name       => "Sobuku",
                           :city      => "Dallas",
                           :state     => "Texas",
                           :avatar     => "45",
                           :birthdate  => "08-30-1956",
                           :date_hired => "09-07-12",
                           :department => "warping"})
-    robot = robot_manager.find(1)
-    robot_2 = robot_manager.all
+
+    robot = robot_manager.all.last
+    robot_2 = robot_manager.all.first
     assert_equal "Sobuku", robot.name
     assert_equal "08-30-1956", robot.birthdate
-    assert_equal 1, robot.id
-    refute robot.id == 2
   end
 
   def test_it_returns__empty_array_for_initial_all
