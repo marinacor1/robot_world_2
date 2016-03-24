@@ -4,18 +4,18 @@ class UserDeletesRobot < Minitest::Test
   include TestHelpers
   include Capybara::DSL
 
-  def test_user_can_delete_a_task
+  def test_user_can_delete_a_robot
     visit '/'
-    create_tasks(1)
+    create_robots(1)
 
-    visit '/tasks'
+    visit '/robots'
       within(".buttons") do #index.erb
-        assert page.has_content?("task title 1")
+        assert page.has_content?("robot title 1")
       end
 
       click_button("Eliminar")
-      assert_equal "/tasks", current_path
+      assert_equal "/robots", current_path
 
-      refute page.has_content?("task title 1") #index.erb
+      refute page.has_content?("robot title 1") #index.erb
   end
 end

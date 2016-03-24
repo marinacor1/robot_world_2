@@ -256,5 +256,13 @@ robots:
   birthdate: 08-30-1956
   date_hired: 09-07-12
   department: warping
+- id: 1
+  name: 
+  city: 
+  state: 
+  avatar: 
+  birthdate: 
+  date_hired: 
+  department: 
 total: 0
 tasks: []
