@@ -47,7 +47,11 @@ class RobotManagerApp < Sinatra::Base
   end
 
   def robot_manager
-    database = YAML::Store.new('db/robot_manager')
-    @robot_manager ||= RobotManager.new(database)
+    if ENV["RACK_ENV"]  == "test"
+      database = YAML::Store.new('db/robot_manager_test') #YAML is the database. File is white space sensitive.
+    else
+      database = YAML::Store.new('db/robot_manager')
+    end
+    @robot_manager ||= TaskManager.new(database) #robots are created here
   end
 end

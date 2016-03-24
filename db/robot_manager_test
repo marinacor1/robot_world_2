@@ -128,5 +128,37 @@ robots:
   birthdate: 
   date_hired: 
   department: 
+- id: 1
+  name: 
+  city: 
+  state: 
+  avatar: 
+  birthdate: 
+  date_hired: 
+  department: 
+- id: 1
+  name: 
+  city: 
+  state: 
+  avatar: 
+  birthdate: 
+  date_hired: 
+  department: 
+- id: 1
+  name: 
+  city: 
+  state: 
+  avatar: 
+  birthdate: 
+  date_hired: 
+  department: 
+- id: 1
+  name: 
+  city: 
+  state: 
+  avatar: 
+  birthdate: 
+  date_hired: 
+  department: 
 total: 0
 tasks: []

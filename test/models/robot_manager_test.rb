@@ -3,6 +3,7 @@ require_relative '../test_helper'
 class RobotManagerTest < Minitest::Test
   include TestHelpers
   def test_robot_manager_creates_a_robot
+    skip 
     robot_manager.create({ "id"       =>1,
                           "name"       => "Sobuku",
                           "city"       => "Dallas",

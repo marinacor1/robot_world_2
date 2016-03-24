@@ -48,7 +48,7 @@ class RobotManager
   end
 
   def raw_robot(id)
-    raw_robots.find do |robot|
+    x = raw_robots.find do |robot|
       robot["id"] == id
     end
   end
