@@ -57,4 +57,10 @@ class RobotManager
     Robot.new(raw_robot(id))
   end
 
+  def delete_all #access database so use database.transaction
+    database.transaction do
+      database['tasks'] = []
+      database['total'] = 0
+    end
+  end
 end
