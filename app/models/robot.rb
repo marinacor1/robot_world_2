@@ -9,7 +9,6 @@ class Robot
               :department
 
   def initialize(data)
-    binding.pry
     puts "this is the data: #{data}!!"
     @id         = data["id"]
     @name       = data["name"]
