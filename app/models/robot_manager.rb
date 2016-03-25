@@ -37,16 +37,15 @@ class RobotManager
     end
   end
 
-  def raw_robot(id)
-    x = raw_robots.find do |robot|
-      robot["id"] == id
-    end
-  end
+  # def raw_robot(id)
+  #   x = raw_robots.find do |robot|
+  #     robot["id"] == id
+  #   end
+  # end
 
   def find(id)
-    raw_robot = database.from(:robots).where(:id => id).to_a.first
-    #comes out as nil
-    Robot.new(raw_robot)
+    num = id - 1
+    correct_robot = all[num]
   end
 
   def delete_all #access database so use database.transaction

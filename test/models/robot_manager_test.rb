@@ -55,7 +55,6 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_find_robot_if_id_provided
-    skip
     robot_manager.create({ :name       => "Sobuku",
                           :city      => "Dallas",
                           :state     => "Texas",
