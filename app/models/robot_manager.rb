@@ -26,7 +26,10 @@ class RobotManager
   end
 
   def delete(id)
-    database.from(:robots)
+    binding.pry
+   all.reject! do |robot|
+      all.index(robot) == id-1
+    end
     binding.pry
   end
 
