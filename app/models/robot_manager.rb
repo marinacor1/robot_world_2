@@ -44,8 +44,9 @@ class RobotManager
   end
 
   def find(id)
-    # dataset.where(:id => id)
-    Robot.new(raw_robot(id))
+    raw_robot = database.from(:robots).where(:id => id).to_a.first
+    #comes out as nil
+    Robot.new(raw_robot)
   end
 
   def delete_all #access database so use database.transaction
