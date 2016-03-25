@@ -86,17 +86,34 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_find_will_delete_based_on_id
-    skip
-    robot_manager.create({:title => 'eat', :description => 'i love food'})
-    robot_manager.create({:title => 'swim', :description => '30 minute laps'})
-    robot_manager.create({:title => 'yoga', :description => 'yoga sculpt at 6pm'})
-    robot_manager.create({:title => 'grocery shopping', :description => 'need milk'})
+    robot_manager.create({ :name       => "Sobuku",
+                          :city      => "Dallas",
+                          :state     => "Texas",
+                          :avatar     => "45",
+                          :birthdate  => "08-30-1956",
+                          :date_hired => "09-07-12",
+                          :department => "warping"})
+
+    robot_manager.create({ :name       => "Zaza",
+                          :city      => "Rome",
+                          :state     => "Texas",
+                          :avatar     => "234",
+                          :birthdate  => "04-30-1956",
+                          :date_hired => "12-07-12",
+                          :department => "aa"})
+
+    robot_manager.create({ :name       => "Egrega",
+                          :city      => "Eaton",
+                          :state     => "Illinois",
+                          :avatar     => "23423",
+                          :birthdate  => "08-31-1956",
+                          :date_hired => "3-12-12",
+                          :department => "wasfrping"})
 
     robot_manager.delete(1)
     new_all = robot_manager.all
-    assert_equal 'swim', new_all.first.title
-    refute_equal 'eat', new_all.first.title
-    #add an any? assertion
+    assert_equal 'Zaza', new_all.first.name
+    refute_equal 'Rome', new_all.first.city
   end
 
   def test_update_works

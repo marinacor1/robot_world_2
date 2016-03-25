@@ -26,9 +26,8 @@ class RobotManager
   end
 
   def delete(id)
-    database.transaction do
-      database['robots'].delete_if { |robot| robot["id"] == id}
-    end
+    database.from(:robots)
+    binding.pry
   end
 
   def all
@@ -37,18 +36,11 @@ class RobotManager
     end
   end
 
-  # def raw_robot(id)
-  #   x = raw_robots.find do |robot|
-  #     robot["id"] == id
-  #   end
-  # end
-
   def find(id)
-    num = id - 1
-    correct_robot = all[num]
+    correct_robot = all[id - 1]
   end
 
-  def delete_all #access database so use database.transaction
+  def delete_all
     database.from(:robots).delete
   end
 end
