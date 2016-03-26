@@ -1,8 +1,7 @@
 <h1>Todos los Robots</h1>
 <div class="mess">
       <% @robots.each do |robot| %>
-<table class ="table table-condensed table-hover
-">
+<table class ="table table-condensed table-hover">
     <td><i class='glyphicon glyphicon-th'></i></td>
     <td><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
     <td><a href="/robots/<%= robot.id %>/edit">Editar</a></td>
