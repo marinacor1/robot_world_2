@@ -21,6 +21,7 @@ class RobotManager
   end
 
   def all
+    binding.pry
     database.from(:robots).map do |data|
       Robot.new(data)
     end

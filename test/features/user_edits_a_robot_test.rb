@@ -23,8 +23,9 @@ class UserEditsaRobot < Minitest::Test
 
       click_link("Editar")
       assert current_path.include?("edit")
+    #  assert_equal "robots/1/edit", current_path
 
-      fill_in 'robot[name]', with: "Mrs.Jackson" #edit.erb
+      fill_in 'robot[name]', with: "Mrs. Jackson" #edit.erb
       fill_in 'robot[city]', with: "Boston" #edit.erb
       fill_in 'robot[state]', with: "Massachusetts" #edit.erb
       fill_in 'robot[avatar]', with: "9272" #edit.erb
@@ -36,7 +37,7 @@ class UserEditsaRobot < Minitest::Test
     assert current_path.include?("robots") #edit.erb ??
 
     within(".edits") do
-      assert page.has_content?("Mrs.Jackson") #index.erb
+      assert page.has_content?("Mrs. Jackson") #index.erb
     end
   end
 end
