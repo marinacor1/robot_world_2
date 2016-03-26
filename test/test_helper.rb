@@ -17,7 +17,7 @@ require 'tilt/erb'
 module TestHelpers
   def teardown
     robot_manager.delete_all
-    super #minitest after every test will tear down doesn't overwrite functionality
+    super
   end
 
   def robot_manager #will overwrite what was database before. Manage data.

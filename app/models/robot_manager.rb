@@ -26,9 +26,8 @@ class RobotManager
   end
 
   def delete(id)
-   all.reject! do |robot|
-      all.index(robot) == id-1
-    end
+    database.from(:robots).where(:id => id).delete
+    # all.delete_if {|i| i.id == id}
   end
 
   def all

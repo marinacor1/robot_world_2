@@ -10,7 +10,7 @@ class Robot
 
   def initialize(data)
     puts "this is the data: #{data}!!"
-    puts "this is the count: #{data.keys.count}"
+    # puts "this is the count: #{data.keys.count}"
     @id         = data[:id]
     @name       = data[:name]
     @city       = data[:city]

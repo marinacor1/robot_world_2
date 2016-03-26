@@ -86,7 +86,7 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_find_will_delete_based_on_id
-    robot_manager.create({ :name       => "Sobuku",
+    robot_manager.create({:name       => "Sobuku",
                           :city      => "Dallas",
                           :state     => "Texas",
                           :avatar     => "45",
@@ -94,7 +94,7 @@ class RobotManagerTest < Minitest::Test
                           :date_hired => "09-07-12",
                           :department => "warping"})
 
-    robot_manager.create({ :name       => "Zaza",
+    robot_manager.create({:name       => "Zaza",
                           :city      => "Rome",
                           :state     => "Texas",
                           :avatar     => "234",
@@ -110,10 +110,14 @@ class RobotManagerTest < Minitest::Test
                           :date_hired => "3-12-12",
                           :department => "wasfrping"})
 
-    robot_manager.delete(1)
-    new_all = robot_manager.all
-    assert_equal 'Zaza', new_all.first.name
-    refute_equal 'Rome', new_all.first.city
+    assert_equal 3, robot_manager.all.count
+
+    robot_id = robot_manager.all.first.id
+    robot_manager.delete(robot_id)
+
+    assert_equal 'Zaza', robot_manager.all.first.name
+    assert_equal 'Rome', robot_manager.all.first.city
+    assert_equal 2, robot_manager.all.count
   end
 
   def test_update_works
