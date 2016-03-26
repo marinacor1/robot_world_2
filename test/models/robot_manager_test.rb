@@ -121,11 +121,35 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_update_works
-    skip
-    robot_manager.create({:title => 'eat', :description => 'i love food'})
-    robot = ({:title => 'cooking', :description => 'making healthy meals'})
-    robot_manager.update(1, robot)
-    assert_equal 'cooking', robot_manager.all.first.title
+    robot_manager.create({:name       => "Sobuku",
+                          :city      => "Dallas",
+                          :state     => "Texas",
+                          :avatar     => "45",
+                          :birthdate  => "08-30-1956",
+                          :date_hired => "09-07-12",
+                          :department => "warping"})
+
+    robot_manager.create({:name       => "Zaza",
+                          :city      => "Rome",
+                          :state     => "Texas",
+                          :avatar     => "234",
+                          :birthdate  => "04-30-1956",
+                          :date_hired => "12-07-12",
+                          :department => "aa"})    
+
+    updated_robot = ({:name       => "Sarah",
+                          :city      => "New York",
+                          :state     => "New York",
+                          :avatar     => "234",
+                          :birthdate  => "04-30-1956",
+                          :date_hired => "12-07-12",
+                          :department => "aa"})
+
+    robot_id = robot_manager.all.first.id
+    robot_manager.update(robot_id, updated_robot)
+
+    assert_equal 'Sarah', robot_manager.all.first.name
+    assert_equal 'New York', robot_manager.all.first.city
   end
 
 end

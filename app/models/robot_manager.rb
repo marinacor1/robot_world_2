@@ -13,21 +13,12 @@ class RobotManager
   end
 
   def update(id, robot)
-    database.transaction do
-      target = database['robots'].find { |data| data["id"] == id}
-      target["name"] = robot[:name]
-      target["city"] = robot[:city]
-      target["state"] = robot[:state]
-      target["avatar"] = robot[:avatar]
-      target["birthdate"] = robot[:birthdate]
-      target["date_hired"] = robot[:date_hired]
-      target["department"] = robot[:department]
-    end
+    database.from(:robots).where(:id => id).update(robot)
   end
 
   def delete(id)
+    #database is all info . from robots looks for robots table
     database.from(:robots).where(:id => id).delete
-    # all.delete_if {|i| i.id == id}
   end
 
   def all
