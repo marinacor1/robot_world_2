@@ -1,18 +1,56 @@
-<h1>Todos los Robots</h1>
-<div class="mess">
-      <% @robots.each do |robot| %>
-<table class ="table table-condensed table-hover
-">
-    <td><i class='glyphicon glyphicon-th'></i></td>
-    <td><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
-    <td><a href="/robots/<%= robot.id %>/edit">Editar</a></td>
-    <td>
-      <form action="/robots/<%= robot.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Eliminar">
-      </form>
-    </td>
-</table>
-</div>
-<% end %>
+<div class="col-md-12">
+​
+  <div class="row">
+    <h1>All Tasks</h1>
+  </div>
+      <table class="table">
+        <tr>
+          <th>Task ID</th>
+          <th>Task Title</th>
+          <th> </th>
+          <th> </th>
+        </tr>
+        <tr>
+         <% @tasks.each do |task| %>
+            <td><%= task.id %></td>
+            <td> <a href="/tasks/<%= task.id %>"><%= task.title %></a></td>
+            <td> <a href="/tasks/<%= task.id %>/edit">Edit</a></td>
+            <td>
+              <form action="/tasks/<%= task.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete">
+              </form>
+            </td>
+        </tr>
+       <% end %>
+     </table>
+ </div>
  <!-- adds link to edit . underscore method means to override -->
+
+<div class="col-md-12">
+​
+  <div class="row">
+    <h1>All Robots</h1>
+  </div>
+      <table class="table">
+        <tr>
+          <th>Robot ID</th>
+          <th>Robot Title</th>
+          <th> </th>
+          <th> </th>
+        </tr>
+        <tr>
+         <% @robots.each do |robot| %>
+            <td><%= robot.id %></td>
+            <td> <a href="/robots/<%= robot.id %>"><%= robot.title %></a></td>
+            <td> <a href="/robots/<%= robot.id %>/edit">Edit</a></td>
+            <td>
+              <form action="/robots/<%= robot.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete">
+              </form>
+            </td>
+        </tr>
+       <% end %>
+     </table>
+ </div>

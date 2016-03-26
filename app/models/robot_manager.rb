@@ -26,11 +26,10 @@ class RobotManager
   end
 
   def delete(id)
-    binding.pry
    all.reject! do |robot|
-      all.index(robot) == id-1
-    end
-    binding.pry
+     binding.pry
+     all.index(robot) == (id-1)
+   end
   end
 
   def all
@@ -44,6 +43,7 @@ class RobotManager
   end
 
   def delete_all
-    database.from(:robots).delete
+    # database.from(:robots).delete
+    all.reject!{|robot| robot == robot}
   end
 end

@@ -102,16 +102,16 @@ class RobotManagerTest < Minitest::Test
                           :date_hired => "12-07-12",
                           :department => "aa"})
 
-    robot_manager.create({ :name       => "Egrega",
-                          :city      => "Eaton",
-                          :state     => "Illinois",
+    robot_manager.create({ :name      => "Egrega",
+                          :city       => "Eaton",
+                          :state      => "Illinois",
                           :avatar     => "23423",
                           :birthdate  => "08-31-1956",
                           :date_hired => "3-12-12",
                           :department => "wasfrping"})
-
     robot_manager.delete(1)
     new_all = robot_manager.all
+    assert_equal 0, new_all.count 
     assert_equal 'Zaza', new_all.first.name
     refute_equal 'Rome', new_all.first.city
   end
