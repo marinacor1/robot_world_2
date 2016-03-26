@@ -10,6 +10,7 @@ class Robot
 
   def initialize(data)
     puts "this is the data: #{data}!!"
+    puts "this is the count: #{data.keys.count}"
     @id         = data[:id]
     @name       = data[:name]
     @city       = data[:city]
@@ -20,16 +21,5 @@ class Robot
     @department = data[:department]
   end
 
-  def average_robot_age
-  end
-
-  def robots_hired_per_year
-  end
-
-  def deparment_number
-  end
-
-  def city_number
-  end
 
 end

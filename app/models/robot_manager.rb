@@ -26,11 +26,9 @@ class RobotManager
   end
 
   def delete(id)
-    binding.pry
    all.reject! do |robot|
       all.index(robot) == id-1
     end
-    binding.pry
   end
 
   def all
