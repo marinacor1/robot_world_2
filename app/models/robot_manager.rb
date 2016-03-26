@@ -17,7 +17,6 @@ class RobotManager
   end
 
   def delete(id)
-    #database is all info . from robots looks for robots table
     database.from(:robots).where(:id => id).delete
   end
 

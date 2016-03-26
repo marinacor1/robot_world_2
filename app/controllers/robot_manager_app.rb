@@ -47,7 +47,7 @@ class RobotManagerApp < Sinatra::Base
     if ENV["RACK_ENV"]  == "test"
       database = Sequel.sqlite('db/robot_manager_test.sqlite')
     else
-      database = Sequel.sqlite('db/robot_manager_devlopment.sqlite')
+      database = Sequel.sqlite('db/robot_manager_development.sqlite')
     end
     @robot_manager ||= RobotManager.new(database) #robots are created here
   end

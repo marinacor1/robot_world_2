@@ -5,7 +5,6 @@ class UserCanCreateNewRobotTest < Minitest::Test
   include Capybara::DSL
 
   def test_user_can_create_new_robot
-    skip
     visit '/'
       click_link("Nuevo Robot")
       assert_equal "/robots/new", current_path
