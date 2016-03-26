@@ -24,16 +24,16 @@ class UserEditsaRobot < Minitest::Test
       click_link("Editar")
       assert current_path.include?("edit")
 
-      fill_in 'robot[name]', with: "Mrs.Jackson" #new.erb
-      fill_in 'robot[city]', with: "Boston" #new.erb
-      fill_in 'robot[state]', with: "Massachusetts" #new.erb
-      fill_in 'robot[avatar]', with: "9272" #new.erb
-      fill_in 'robot[birthdate]', with: "05-16-1087" #new.erb
-      fill_in 'robot[date_hired]', with: "03-13-1927" #new.erb
-      fill_in 'robot[department]', with: "Jello" #new.erb
+      fill_in 'robot[name]', with: "Mrs.Jackson" #edit.erb
+      fill_in 'robot[city]', with: "Boston" #edit.erb
+      fill_in 'robot[state]', with: "Massachusetts" #edit.erb
+      fill_in 'robot[avatar]', with: "9272" #edit.erb
+      fill_in 'robot[birthdate]', with: "05-16-1087" #edit.erb
+      fill_in 'robot[date_hired]', with: "03-13-1927" #edit.erb
+      fill_in 'robot[department]', with: "Jello" #edit.erb
       click_button("Submit")
 
-    assert_equal "/robots/1", current_path #edit.erb ??
+    assert current_path.include?("robots") #edit.erb ??
 
     within(".edits") do
       assert page.has_content?("Mrs.Jackson") #index.erb
