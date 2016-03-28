@@ -24,8 +24,7 @@ class UserEditsaRobot < Minitest::Test
 
       click_link("Editar")
       assert current_path.include?("edit")
-    #  assert_equal "robots/1/edit", current_path
-      binding.pry
+      first(:link , "Editar").click
       fill_in 'robot[name]', with: "Mrs. Jackson" #edit.erb
       fill_in 'robot[city]', with: "Boston" #edit.erb
       fill_in 'robot[state]', with: "Massachusetts" #edit.erb
