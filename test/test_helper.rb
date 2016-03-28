@@ -3,6 +3,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara/dsl'
 require 'tilt/erb'
+require 'launchy'
 
 Capybara.app = RobotManagerApp #sets the app that will be tested with capybara
 
